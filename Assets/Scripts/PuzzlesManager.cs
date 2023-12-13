@@ -21,11 +21,16 @@ public class PuzzlesManager : MonoBehaviour
 
     //Phase1
     public GameObject ball1, ball2, ball3, ball4, ball5, ball6, ball7, ball8, ball9, ball10, ball11, ball12, ball13, ball14, ball15, ball16;
-    public Transform ball1CorrectPosition, ball2CorrectPosition, ball3CorrectPosition, ball4CorrectPosition, ball5CorrectPosition, ball6CorrectPosition;
-    public Transform ball7CorrectPosition, ball8CorrectPosition, ball9CorrectPosition, ball10CorrectPosition, ball11CorrectPosition, ball12CorrectPosition;
-    public Transform ball13CorrectPosition, ball14CorrectPosition, ball15CorrectPosition, ball16CorrectPosition;
+    //public Transform ball1CorrectPosition, ball2CorrectPosition, ball3CorrectPosition, ball4CorrectPosition, ball5CorrectPosition, ball6CorrectPosition;
+    //public Transform ball7CorrectPosition, ball8CorrectPosition, ball9CorrectPosition, ball10CorrectPosition, ball11CorrectPosition, ball12CorrectPosition;
+    //public Transform ball13CorrectPosition, ball14CorrectPosition, ball15CorrectPosition, ball16CorrectPosition;
+    public bool ball1InCorrectPosition, ball2InCorrectPosition, ball3InCorrectPosition, ball4InCorrectPosition, ball5InCorrectPosition, ball6InCorrectPosition;
+    public bool ball7InCorrectPosition, ball8InCorrectPosition, ball9InCorrectPosition, ball10InCorrectPosition, ball11InCorrectPosition, ball12InCorrectPosition;
+    public bool ball13InCorrectPosition, ball14InCorrectPosition, ball15InCorrectPosition, ball16InCorrectPosition;
 
     //Phase2
+    public GameObject card1, card2, card3, card4, card5;
+    public bool card1InCorrectPosition, card2InCorrectPosition, card3InCorrectPosition, card4InCorrectPosition, card5InCorrectPosition;
 
     //Phase3
     public GameObject hiddenObject;
@@ -42,6 +47,7 @@ public class PuzzlesManager : MonoBehaviour
 
     //Phase6
     public GameObject lightHiddenObject;
+    public bool lightInCorrectPosition;
 
     // Start is called before the first frame update
     void Start()
@@ -60,10 +66,23 @@ public class PuzzlesManager : MonoBehaviour
         switch (currentPhase)
         {
             case Phases.Phase1: //Comprobar boleanos de si las bolas están bien colocadas
+                if (ball1InCorrectPosition && ball2InCorrectPosition && ball3InCorrectPosition && ball4InCorrectPosition && ball5InCorrectPosition && ball6InCorrectPosition && 
+                    ball7InCorrectPosition && ball8InCorrectPosition && ball9InCorrectPosition && ball10InCorrectPosition && ball11InCorrectPosition && ball12InCorrectPosition && 
+                    ball13InCorrectPosition && ball14InCorrectPosition && ball15InCorrectPosition && ball16InCorrectPosition)
+                {
+                    phase1Completed = true;
+                    currentPhase = Phases.Phase2;
+                }
                 break;
             case Phases.Phase2: //Poner cartas en mesa de billar y poner en colliders cartas específicas de forma que hagan patrón
                 phase1Started = false;
                 phase2Started = true;
+
+                if (card1InCorrectPosition && card2InCorrectPosition && card3InCorrectPosition && card4InCorrectPosition && card5InCorrectPosition)
+                {
+                    phase2Completed = true;
+                    currentPhase = Phases.Phase3;
+                }
                 break;
             case Phases.Phase3: //Si se ha cogido las gafas glasses on y hiddenObject aparece
                 phase2Started = false;
@@ -83,22 +102,253 @@ public class PuzzlesManager : MonoBehaviour
                 phase4Started = false;
                 phase5Started = true;
 
-                if (BottleThrow.collisionWithElectricity)
+                if (BottleThrow.collisionWithElectricity) 
                 {
                     //Algo pasa, apagar la luz?
                 }
+
                 break;
             case Phases.Phase6: //Comprobar booleano colisión entre bombilla y sitio a colocar para encender luz y hacer aparecer objeto
                 phase5Started = false;
                 phase6Started = true;
 
-                if (LightbulbPositioning.lightbulbWellPlaced)
+                if (LightbulbPositioning.lightbulbWellPlaced) //Forma imprecisa de hacerlo con colliders
                 {
                     //Algo pasa, encender la luz?
                 }
+
+                if (lightInCorrectPosition) //Forma precisa de hacerlo con XRSocketInteractors
+                {
+                    //Algo pasa, encender la luz?
+                }
+
                 break;
             default:
                 break;
         }
+    }
+
+    //Métodos phase1
+    //Métodos para comprobar si cada bola está en su socket correcto o deja de estarlo, luego hay que ponerlos en select entered y select exited del xrsockettaginteractor
+    public void Ball1Correct()
+    {
+        ball1InCorrectPosition = true;
+    }
+
+    public void Ball1Incorrect()
+    {
+        ball1InCorrectPosition = false;
+    }
+
+    public void Ball2Correct()
+    {
+        ball2InCorrectPosition = true;
+    }
+
+    public void Ball2Incorrect()
+    {
+        ball1InCorrectPosition = false;
+    }
+
+    public void Ball3Correct()
+    {
+        ball3InCorrectPosition = true;
+    }
+
+    public void Ball3Incorrect()
+    {
+        ball3InCorrectPosition = false;
+    }
+
+    public void Ball4Correct()
+    {
+        ball4InCorrectPosition = true;
+    }
+
+    public void Ball4Incorrect()
+    {
+        ball4InCorrectPosition = false;
+    }
+
+    public void Ball5Correct()
+    {
+        ball5InCorrectPosition = true;
+    }
+
+    public void Ball5Incorrect()
+    {
+        ball5InCorrectPosition = false;
+    }
+
+    public void Ball6Correct()
+    {
+        ball6InCorrectPosition = true;
+    }
+
+    public void Ball6Incorrect()
+    {
+        ball6InCorrectPosition = false;
+    }
+
+    public void Ball7Correct()
+    {
+        ball7InCorrectPosition = true;
+    }
+
+    public void Ball7Incorrect()
+    {
+        ball7InCorrectPosition = false;
+    }
+
+    public void Ball8Correct()
+    {
+        ball8InCorrectPosition = true;
+    }
+
+    public void Ball8Incorrect()
+    {
+        ball8InCorrectPosition = false;
+    }
+
+    public void Ball9Correct()
+    {
+        ball9InCorrectPosition = true;
+    }
+
+    public void Ball9Incorrect()
+    {
+        ball9InCorrectPosition = false;
+    }
+
+    public void Ball10Correct()
+    {
+        ball10InCorrectPosition = true;
+    }
+
+    public void Ball10Incorrect()
+    {
+        ball10InCorrectPosition = false;
+    }
+
+    public void Ball11Correct()
+    {
+        ball11InCorrectPosition = true;
+    }
+
+    public void Ball11Incorrect()
+    {
+        ball11InCorrectPosition = false;
+    }
+
+    public void Ball12Correct()
+    {
+        ball12InCorrectPosition = true;
+    }
+
+    public void Ball12Incorrect()
+    {
+        ball12InCorrectPosition = false;
+    }
+
+    public void Ball13Correct()
+    {
+        ball13InCorrectPosition = true;
+    }
+
+    public void Ball13Incorrect()
+    {
+        ball13InCorrectPosition = false;
+    }
+
+    public void Ball14Correct()
+    {
+        ball14InCorrectPosition = true;
+    }
+
+    public void Ball14Incorrect()
+    {
+        ball14InCorrectPosition = false;
+    }
+
+    public void Ball15Correct()
+    {
+        ball15InCorrectPosition = true;
+    }
+
+    public void Ball15Incorrect()
+    {
+        ball15InCorrectPosition = false;
+    }
+
+    public void Ball16Correct()
+    {
+        ball16InCorrectPosition = true;
+    }
+
+    public void Ball16Incorrect()
+    {
+        ball16InCorrectPosition = false;
+    }
+
+    //Métodos phase2
+    public void Card1Correct()
+    {
+        card1InCorrectPosition = true;
+    }
+
+    public void Card1Incorrect()
+    {
+        card1InCorrectPosition = false;
+    }
+
+    public void Card2Correct()
+    {
+        card2InCorrectPosition = true;
+    }
+
+    public void Card2Incorrect()
+    {
+        card2InCorrectPosition = false;
+    }
+
+    public void Card3Correct()
+    {
+        card3InCorrectPosition = true;
+    }
+
+    public void Card3Incorrect()
+    {
+        card3InCorrectPosition = false;
+    }
+
+    public void Card4Correct()
+    {
+        card4InCorrectPosition = true;
+    }
+
+    public void Card4Incorrect()
+    {
+        card4InCorrectPosition = false;
+    }
+
+    public void Card5Correct()
+    {
+        card5InCorrectPosition = true;
+    }
+
+    public void Card5Incorrect()
+    {
+        card5InCorrectPosition = false;
+    }
+
+    //Métodos phase 6
+    public void LightCorrect()
+    {
+        lightInCorrectPosition = true;
+    }
+
+    public void LightIncorrect()
+    {
+        lightInCorrectPosition = false;
     }
 }
