@@ -4377,7 +4377,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 7506412989858734134}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 70d51613a089e16428cde7ea630ee3f2,
         type: 3}
@@ -4454,6 +4454,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70d51613a089e16428cde7ea630ee3f2, type: 3}
+--- !u!4 &1330383677 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 70d51613a089e16428cde7ea630ee3f2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1330383676}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1331926663
 GameObject:
   m_ObjectHideFlags: 0
@@ -6185,7 +6191,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 7506412989858734134}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 93a7b706f8b92f74483e12989afc154a,
         type: 3}
@@ -6257,6 +6263,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 93a7b706f8b92f74483e12989afc154a, type: 3}
+--- !u!4 &1816672175 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 93a7b706f8b92f74483e12989afc154a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1816672174}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1877081799
 GameObject:
   m_ObjectHideFlags: 0
@@ -9570,8 +9582,8 @@ Transform:
   m_GameObject: {fileID: 60705101938749007}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.11667, y: 0.17692, z: -0.84146}
+  m_LocalScale: {x: 0.92929, y: 0.92929, z: 0.92929}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2986200525344970032}
@@ -9636,6 +9648,8 @@ Transform:
   - {fileID: 1592411159}
   - {fileID: 1872635788213251456}
   - {fileID: 5392378929121111421}
+  - {fileID: 1330383677}
+  - {fileID: 1816672175}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &7577161315961644576
@@ -10472,5 +10486,3 @@ SceneRoots:
   - {fileID: 844559462}
   - {fileID: 548271831}
   - {fileID: 7506412989858734134}
-  - {fileID: 1330383676}
-  - {fileID: 1816672174}
