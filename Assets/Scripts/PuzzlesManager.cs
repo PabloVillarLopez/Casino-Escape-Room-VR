@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.Events;
 
 public class PuzzlesManager : MonoBehaviour
 {
@@ -28,12 +29,18 @@ public class PuzzlesManager : MonoBehaviour
     public bool ball7InCorrectPosition, ball8InCorrectPosition, ball9InCorrectPosition, ball10InCorrectPosition, ball11InCorrectPosition, ball12InCorrectPosition;
     public bool ball13InCorrectPosition, ball14InCorrectPosition, ball15InCorrectPosition, ball16InCorrectPosition;
 
+    public UnityEvent OnPhase1Completed;
+
     //Phase2
     public GameObject card1, card2, card3, card4, card5;
     public bool card1InCorrectPosition, card2InCorrectPosition, card3InCorrectPosition, card4InCorrectPosition, card5InCorrectPosition;
 
+    public UnityEvent OnPhase2Completed;
+
     //Phase3
     public GameObject hiddenObject;
+    public UnityEvent OnPhase3Completed;
+    public UnityEvent OnPhase4Completed;
 
     //Phase4
     public GameObject clock;
@@ -72,6 +79,7 @@ public class PuzzlesManager : MonoBehaviour
                 {
                     phase1Completed = true;
                     currentPhase = Phases.Phase2;
+                    OnPhase1Completed.Invoke();
                 }
                 break;
             case Phases.Phase2: //Poner cartas en mesa de billar y poner en colliders cartas específicas de forma que hagan patrón
