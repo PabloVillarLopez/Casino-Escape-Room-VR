@@ -44,9 +44,9 @@ public class PuzzlesManager : MonoBehaviour
     public UnityEvent OnPhase3Completed;
     //public UnityEvent OnPhase4Completed;
 
-    [Header("Hidden Object revealed by glasses")]
-    [Space]
-    public GameObject hiddenObject;
+    //[Header("Hidden Object revealed by glasses")]
+    //[Space]
+    //public GameObject hiddenObject;
 
     //Phase4
     //public GameObject clock;
@@ -67,7 +67,7 @@ public class PuzzlesManager : MonoBehaviour
     {
         currentPhase = Phases.Phase1;
         phase1Started = true;
-        hiddenObject.SetActive(false);
+        //hiddenObject.SetActive(false);
         //lightComponent = lightObject.GetComponent<Light>();
         //shadowHiddenObject.SetActive(false);
         //lightHiddenObject.SetActive(false);
@@ -105,8 +105,9 @@ public class PuzzlesManager : MonoBehaviour
 
                 if (GlassesScript.glassesOn)
                 {
-                    hiddenObject.SetActive(true);
+                    //hiddenObject.SetActive(true);
                     //Ver que se hace después hasta pasar a siguiente fase
+                    OnPhase3Completed.Invoke();
                 }
                 break;
             /*case Phases.Phase4: //Ampliar reloj, con mandos cambiar rotación de las manecillas

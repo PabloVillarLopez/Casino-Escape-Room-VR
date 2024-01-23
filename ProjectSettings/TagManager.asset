@@ -25,6 +25,7 @@ TagManager:
   - CardBlack8
   - CardBlack3
   - CardRed5
+  - Glasses
   layers:
   - Default
   - TransparentFX
