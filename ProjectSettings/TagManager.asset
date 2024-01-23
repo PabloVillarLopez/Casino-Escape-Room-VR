@@ -5,6 +5,26 @@ TagManager:
   serializedVersion: 2
   tags:
   - BilliardBall1
+  - BilliardBall2
+  - BilliardBall3
+  - BilliardBall4
+  - BilliardBall5
+  - BilliardBall6
+  - BilliardBall7
+  - BilliardBall8
+  - BilliardBall9
+  - BilliardBall10
+  - BilliardBall11
+  - BilliardBall12
+  - BilliardBall13
+  - BilliardBall14
+  - BilliardBall15
+  - CardBlackA
+  - CardBlackJ
+  - CardRedA
+  - CardBlack8
+  - CardBlack3
+  - CardRed5
   layers:
   - Default
   - TransparentFX
